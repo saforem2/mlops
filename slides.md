@@ -144,7 +144,7 @@ experiment = comet_ml.Experiment(
 
 ---
 
-# Comet `\(+\)`
+# Comet +
 - <i class="fab fa-github"></i> [comet-ml/comet-examples](https://github.com/comet-ml/comet-examples)
 - <i class="fab fa-github"></i> [`saforem2/mlops`](https://github.com/saforem2/mlops)
     - **PyTorch**:
@@ -173,7 +173,21 @@ note:
 ---
 
 # ⚡️ Pytorch Lightning
+- Tutorial on [Tracking and Visualizing Experiments](https://pytorch-lightning.readthedocs.io/en/latest/visualize/logging_intermediate.html) from PyTorch  Lightning
 
+- Built-in support for multiple different "loggers"
+    - [`base`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.base.html#module-pytorch_lightning.loggers.base)
+    - [`comet`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.comet.html#module-pytorch_lightning.loggers.comet)
+    - [`csv_logs`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.csv_logs.html#module-pytorch_lightning.loggers.csv_logs)
+    - [`mlflow`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.mlflow.html#module-pytorch_lightning.loggers.mlflow)
+    - [`neptune`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.neptune.html#module-pytorch_lightning.loggers.neptune)
+    - [`tensorboard`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.tensorboard.html#module-pytorch_lightning.loggers.tensorboard)
+    - [`wandb`](https://pytorch-lightning.readthedocs.io/en/latest/api/pytorch_lightning.loggers.wandb.html#module-pytorch_lightning.loggers.wandb)
+    
+
+---
+
+# ⚡️ Pytorch Lightning
 - **Loggers**:
   ```python
   from pytorch_lightning import loggers as pl_loggers
@@ -204,7 +218,7 @@ note:
 ---
 
 # ⚡️ Pytorch Lightning
-- MLflow:
+- **MLflow**:
   ```python
   from pytorch_lightning.loggers import MLFlowLogger
   mlf_logger = MLFlowLogger(experiment_name='experiment', tracking_uri='file:./ml-runs')
@@ -218,13 +232,6 @@ note:
   ```
 
 ---
-
-<!-- .slide bg="white" -->
-<grid drop="0 0" drag="100 100">
-<iframe width="100%" height="100%" data-src="https://wandb.ai/l2hmc-qcd/l2hmc-qcd/reports/L2HMC-Report-04-04-2022---VmlldzoxNzgzODcx" style="border:none;width:100%" data-preload data-background-interactive></iframe>
-</grid>
-
-
 <style>
 :root {
    --r-heading-font: 'Inter', sans-serif;
