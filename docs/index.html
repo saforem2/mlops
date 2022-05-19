@@ -235,9 +235,9 @@ experiment = comet_ml.Experiment(
   experiment.log_parameters(parameters)
   ```
 </script></section><section  data-markdown><script type="text/template">
-#  Comet  + `TensorFlow`
+#  Comet  `\(+\)` `TensorFlow`
 
-- <i class="fab fa-github"></i> [`mlops/comet/tensorflow/main.py`](https:/www.github.com/saforem2/mlops/comet/tensorflow/main.py)
+- <i class="fab fa-github"></i> [`mlops/src/comet/tensorflow/main.py`](https:/www.github.com/saforem2/src/mlops/comet/tensorflow/main.py)
 - [dashboard](https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step)
 </script></section><section  data-markdown><script type="text/template">
 
@@ -248,7 +248,15 @@ experiment = comet_ml.Experiment(
 <li>Background iframe</li>
 </ul>
 </aside></script></section><section  data-markdown><script type="text/template">
-<!-- .slide: class="has-light-background drop" data-background-color="white" -->
+# Comet `\(+\)` ⚡️`Pytorch Lightning`
+</script></section><section  data-markdown><script type="text/template">
+# Comet `\(+\)`
+- <i class="fab fa-github"></i>  [`mlops/src/comet/torch`](https://github.com/saforem2/mlops/src/comet/torch):
+    - **DDP**: [`ddp.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
+    - ️️ [**Pytorch Lightning**](https://pytorch-lightning.rtfd.io/en/latest/) ⚡: [`lightning.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
+- <i class="fab fa-github"></i>  [`mlops/src/comet/tensorflow`](https://github.com/saforem2/mlops/src/comet/tensorflow):
+    -  [`main.py`](https://github.com/saforem2/mlops/src/comet/tensorflow)
+</script></section><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
 <div class="reset-margin" style="position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
 
 <iframe width="100%" height="100%" data-src="https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step" style="border:none;width:100%" data-preload data-background-interactive></iframe>

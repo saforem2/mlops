@@ -144,9 +144,9 @@ experiment = comet_ml.Experiment(
 
 ---
 
-#  Comet  + `TensorFlow`
+#  Comet  `\(+\)` `TensorFlow`
 
-- <i class="fab fa-github"></i> [`mlops/comet/tensorflow/main.py`](https:/www.github.com/saforem2/mlops/comet/tensorflow/main.py)
+- <i class="fab fa-github"></i> [`mlops/src/comet/tensorflow/main.py`](https:/www.github.com/saforem2/src/mlops/comet/tensorflow/main.py)
 - [dashboard](https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step)
 
 ---
@@ -160,6 +160,18 @@ note:
 
 ---
 
+# Comet `\(+\)` ⚡️`Pytorch Lightning`
+
+---
+
+# Comet `\(+\)`
+- <i class="fab fa-github"></i>  [`mlops/src/comet/torch`](https://github.com/saforem2/mlops/src/comet/torch):
+    - **DDP**: [`ddp.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
+    - ️️ [**Pytorch Lightning**](https://pytorch-lightning.rtfd.io/en/latest/) ⚡: [`lightning.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
+- <i class="fab fa-github"></i>  [`mlops/src/comet/tensorflow`](https://github.com/saforem2/mlops/src/comet/tensorflow):
+    -  [`main.py`](https://github.com/saforem2/mlops/src/comet/tensorflow)
+
+---
 <!-- .slide bg="white" -->
 <grid drop="0 0" drag="100 100">
 <iframe width="100%" height="100%" data-src="https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step" style="border:none;width:100%" data-preload data-background-interactive></iframe>
