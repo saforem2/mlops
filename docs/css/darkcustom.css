@@ -1,0 +1,524 @@
+@font-face {
+    font-family: KaTeX_Math;
+    src: url('../custom/fonts/katex/KaTeX_Main-Regular.woff');
+}
+@font-face {
+    font-family: OpenSans-Condensed;
+    src: url('../custom/fonts/OpenSans_Condensed.ttf');
+}
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url('../custom/fonts/OpenSans-ExtraBold.ttf');
+}
+@font-face {
+    font-family: SourceSansPro;
+    src: url('../custom/fonts/SourceSansPro-Regular.ttf');
+}
+
+
+section.has-dark-background {
+    background-color: #1c1c1c;
+    --r-heading-color: #efefef;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+section.has-dark-background h1,
+section.has-dark-background h2,
+section.has-dark-background h3,
+section.has-dark-background h4,
+section.has-dark-background h5,
+section.has-dark-background h6 {
+    color: rgb(235,235,235);
+}
+
+/* /_ GLOBAL STYLES _/ */
+:root {
+    --r-background-color: #fff;
+    --r-heading-font: "OpenSans-Bold", "Open Sans", Impact, sans-serif;
+    /* --r-heading-font: 'Open Sans', Impact, Helvetica, sans-serif; */
+    --r-main-font: "SourceSansPro", 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    --r-main-font-size: 36px;
+    --r-main-color: #222;
+    --r-block-margin: 10px;
+    --r-heading-margin: 0 0 20px 0;
+    --r-heading-color: #222;
+    --r-heading-line-height: 1.2;
+    --r-heading-letter-spacing: -0.05px;
+    --r-heading-word-spacing: 0.5px;
+    --r-heading-text-transform: none;
+    --r-heading-text-shadow: none;
+    --r-heading-font-weight: 800;
+    --r-heading1-text-shadow: none;
+    --r-heading1-size: 2.0em;
+    --r-heading2-size: 1.5em;
+    --r-heading3-size: 1.20em;
+    --r-heading4-size: 1.15em;
+    --r-heading5-size: 1.10em;
+    --r-heading6-size: 1.05em;
+    --r-code-font: "agave Nerd Font", monospace;
+    --r-link-color: #007DFF;
+    --r-link-color-dark: #F92672;
+    --r-link-color-hover: #63FF51;
+    --r-link-color-dark-hover: #FFFF00;
+    --r-controls-color: #00CCFF;
+    --r-progress-color: #00CCFF;
+    --r-selection-background-color: rgba(30, 60, 107, 0.9);
+    --r-selection-color: #fff;
+}
+
+.reveal .katex .mathdefault {
+    font-family: 'KaTeX_Math';
+    src: ('../custom/fonts/katex/KaTeX_Math-Italic.ttf');
+}
+
+.reveal .MathJax {
+    font-family: 'KaTeX_Math';
+    src: ('../custom/fonts/katex/KaTeX_Math-Italic.ttf');
+}
+
+.katex .mathdefault {
+    font-family: 'KaTeX_Math';
+    src: ('../custom/fonts/katex/KaTeX_Math-Italic.ttf');
+}
+
+
+.reveal-viewport {
+    background: #fff;
+    background-color: var(--r-background-color);
+}
+
+.reveal {
+    font-family: var(--r-main-font);
+    font-size: var(--r-main-font-size);
+    font-weight: normal;
+    color: var(--r-main-color);
+}
+
+.reveal ::selection {
+    color: var(--r-selection-color);
+    background: var(--r-selection-background-color);
+    text-shadow: none;
+}
+
+.reveal ::-moz-selection {
+    color: var(--r-selection-color);
+    background: var(--r-selection-background-color);
+    text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+    line-height: 1.2;
+    font-weight: inherit;
+}
+
+/* HEADERS */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    margin: var(--r-heading-margin);
+    color: var(--r-heading-color);
+    font-family: var(--r-heading-font);
+    font-weight: var(--r-heading-font-weight);
+    line-height: var(--r-heading-line-height);
+    letter-spacing: var(--r-heading-letter-spacing);
+    word-spacing: var(--r-heading-word-spacing);
+    text-transform: var(--r-heading-text-transform);
+    text-shadow: var(--r-heading-text-shadow);
+    word-wrap: break-word;
+}
+
+.reveal h1 {
+    font-size: var(--r-heading1-size);
+}
+
+.reveal h2 {
+    font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+    font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+    font-size: var(--r-heading4-size);
+}
+
+.reveal h1 {
+    text-shadow: var(--r-heading1-text-shadow);
+}
+
+/* OTHER */
+.reveal p {
+    margin: var(--r-block-margin) 0;
+    /* line-height: 1.3; */
+}
+
+/* Remove trailing margins after titles */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: 98%;
+    max-height: 98%;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
+.reveal strong,
+.reveal b {
+    font-weight: bold;
+}
+
+.reveal em {
+    font-style: italic;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 0 0 0;
+}
+
+.reveal ol {
+    list-style-type: decimal;
+}
+
+.reveal ul {
+    list-style-type: disc;
+}
+
+.reveal ul ul {
+    list-style-type: square;
+}
+
+.reveal ul ul ul {
+    list-style-type: circle;
+}
+
+.reveal .slide-number a {
+    color: #111 !important;
+    /* background-color: rgba(255, 255, 255, 1.0) !important; */
+}
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+    display: block;
+    margin-left: 0px;
+    /* margin-bottom: 20px; */
+}
+
+.reveal ul:not(:last-child) {
+    margin-bottom: 2px;
+}
+
+.reveal dt {
+    font-weight: bold;
+}
+
+.reveal dd {
+    margin-left: 10px;
+}
+
+.reveal blockquote {
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: var(--r-block-margin) auto;
+    padding: 5px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2);
+}
+
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+    display: inline-block;
+}
+
+.reveal q {
+    font-style: italic;
+}
+
+.reveal pre {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: var(--r-block-margin) auto;
+    text-align: left;
+    font-size: 0.55em;
+    font-family: var(--r-code-font);
+    line-height: 1.2em;
+    word-wrap: break-word;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.reveal code {
+    font-family: var(--r-code-font);
+    text-transform: none;
+    tab-size: 2;
+}
+
+.reveal pre code {
+    display: block;
+    padding: 5px;
+    overflow: auto;
+    max-height: 400px;
+    word-wrap: normal;
+}
+
+.reveal .code-wrapper {
+    white-space: normal;
+}
+
+.reveal .code-wrapper code {
+    white-space: pre;
+}
+
+.reveal table {
+    margin: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.reveal table th {
+    font-weight: bold;
+}
+
+.reveal table th,
+.reveal table td {
+    text-align: left;
+    padding: 0.2em 0.5em 0.2em 0.5em;
+    border-bottom: 1px solid;
+}
+
+.reveal table th[align="center"],
+.reveal table td[align="center"] {
+    text-align: center;
+}
+
+.reveal table th[align="right"],
+.reveal table td[align="right"] {
+    text-align: right;
+}
+
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.reveal sup {
+    vertical-align: super;
+    font-size: smaller;
+}
+
+.reveal sub {
+    vertical-align: sub;
+    font-size: smaller;
+}
+
+.reveal small {
+    display: inline-block;
+    font-size: 0.6em;
+    line-height: 1.2em;
+    vertical-align: top;
+}
+
+.reveal img {
+    margin: var(--r-block-margin) 0;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
+
+/* LINKS */
+.reveal a {
+    color: var(--r-link-color);
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.reveal a:hover {
+color: var(--r-link-color-hover);
+text-shadow: none;
+border: none;
+}
+
+.reveal .roll span:after {
+color: #fff;
+background: var(--r-link-color-dark);
+}
+
+/* Frame helper  */
+.reveal .r-frame {
+    border: 4px solid var(--r-main-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.0);
+}
+
+.reveal a .r-frame {
+    transition: all 0.15s linear;
+}
+
+.reveal a:hover .r-frame {
+    border-color: var(--r-link-color);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+
+/* - NAVIGATION CONTROLS */
+.reveal .controls {
+    color: var(--r-controls-color);
+}
+
+
+/* - PROGRESS BAR */
+.reveal .progress {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--r-progress-color);
+}
+
+/* - PRINT BACKGROUND */
+@media print {
+    .backgrounds {
+        background-color: var(--r-background-color);
+    }
+}
+
+
+#left {
+  margin: 0 0 5px 5px;
+  text-align: left;
+  float: left;
+  z-index: -10;
+  width: 48%;
+  font-size: 0.85em;
+}
+
+#right {
+  margin: 0 0 5px 0;
+  float: right;
+  max-width: 48%;
+  text-align: left;
+  z-index: -10;
+  width: 48%;
+  font-size: 0.85em;
+}
+
+
+#blue {
+    color: #228BE6;
+}
+
+#bright {
+    color: #F92672;
+}
+
+#green {
+    color: #009051;
+}
+
+#lightpink {
+    color: #E64980;
+}
+
+#pink {
+    color: #F92672;
+}
+
+#red {
+    color: #FA5252;
+}
+
+#noteinverse {
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    border-color: #1c1c1c;
+    color: #efefef;
+    padding: auto;
+    margin: auto;
+}
+
+#note {
+    background-color: rgba(240, 240, 240, 0.90);
+    border-radius: 5px;
+    border-color: rgba(240, 240, 240, 1.0);
+    padding: auto;
+    margin: auto;
+}
+
+#halfsize {
+    font-size: 0.5em;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#centerflex {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    max-width: 95%;
+}
+
+.reveal .slide-number {
+	font-size: 0.35em;
+	position: fixed;
+	left: 45%;
+	width: 10%;
+	text-align: center;
+}
+
+.fork-reveal {
+	display: none;
+}
+
+.reveal .superscript {
+	top: -0.5em;
+	position: relative;
+	font-style: italic;
+}
+
+.reveal .footer {
+	position: fixed;
+	bottom: 2.0em;
+	font-size: 60%;
+	left: 0.0px;
+	text-align: center;
+	width: 100%;
+}
+.reveal .dark_box {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0, 0.5), 0 5px 25px rgba(0, 0, 0, 0.2);
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #fff;
+	padding: 7px;
+	pointer-events: none;
+}
+
+.dark_box_text {
+	color: #fff !important;
+	pointer-events: none;
+}
+
+.reveal .imgnoborder {
+	border: 0;
+	background: 0;
+	box-shadow: none;
+	align-self: center;
+	margin: 0px;
+}
+
+
+/* # sourceMappingURL=white.css.map */

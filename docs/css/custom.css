@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap'); */
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+    html { font-family: 'Inter var', sans-serif; }
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --r-heading-text-transform: none;
+    --r-heading-margin: 0 0 20px 0;
+    --r-heading-font: 'Playfair Display','Noto Serif',serif,"Merriweather","OpenSans-Bold","Inter","graze-pro","Open Sans",Helvetica,Impact,sans-serif;
+    --r-main-background-color: #1c1c1c;
+    /* --r-main-font: "Inter", sans-serif, "Inter", "SourceSansPro", "Open Sans", "SourceSansPro", Helvetica Neue, sans-serif; */
+    --r-main-font: "Inter", -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+    --r-main-font-size: 32px;
+    --r-block-margin: 5px;
+    --r-main-font-weight: 400;
+    /* --r-heading-line-height: 1.2; */
+    /* --r-heading-letter-spacing: -0.45px; */
+    /* --r-heading-word-spacing: 0.5px; */
+    --r-heading-text-transform: none;
+    --r-heading-text-shadow: none;
+    --r-heading-font-weight: 900;
+    --r-heading1-text-shadow: none;
+    --r-heading1-size: 2em;
+    --r-heading2-size: 1.75em;
+    --r-heading3-size: 1.5em;
+    --r-heading4-size: 1.25em;
+    --r-heading5-size: 1.1em;
+    --r-heading6-size: 1.05em;
+    --r-code-font: "agave Nerd Font", monospace;
+    --r-link-color: #29B6F6;
+    --r-link-color-dark: #f92672;
+    --r-link-color-hover: #63ff51;
+    --r-controls-color: #228BE6;
+    --r-progress-color: #404040;
+    --r-selection-background-color: rgba(255, 255, 0, 0.15);
+    --r-selection-color: rgb(255, 255, 0);
+    --r-main-color: #e0e0e0;
+    --text-muted: #757575;
+    --text-faint: #404040;
+    --r-heading-color: #9e9e9e;
+    /* --r-background-color: #fff; */
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
+.reveal {
+    font-family: var(--r-main-font), sans-serif;
+    font-size: var(--r-main-font-size);
+    font-weight: var(--r-main-font-weight);
+    color: var(--r-main-color);
+    background-color: var(--r-main-background-color);
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+    margin: var(--r-heading-margin);
+    color: var(--r-heading-color);
+    font-family: var(--r-heading-font);
+    line-height: var(--r-heading-line-height);
+    word-spacing: var(--r-heading-word-spacing);
+    text-transform: var(--r-heading-text-transform);
+    text-shadow: var(--r-heading-text-shadow);
+    font-weight: var(--r-heading-font-weight);
+    word-wrap: break-word;
+}
+
+.reveal h1 {
+    /* font-weight: 800; */
+    font-size: var(--r-heading1-size);
+}
+
+.reveal h2 {
+    /* font-weight: 700; */
+    font-size: var(--r-heading2-size);
+}
+
+.reveal h3 {
+    /* font-weight: 700; */
+    font-size: var(--r-heading3-size);
+}
+
+.reveal h4 {
+    /* font-weight: 700; */
+    font-size: var(--r-heading4-size);
+}
+
+.reveal h5 {
+    /* font-weight: 600; */
+    font-size: var(--r-heading5-size);
+}
+.reveal h6 {
+    /* font-weight: 500; */
+    font-size: var(--r-heading6-size);
+}
+
+
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  margin-bottom: 10px;
+}
+
+.reveal ul:not(:last-child) {
+    margin-bottom: 2px;
+}
+
+.reveal ul:last-child {
+    margin-bottom: 20px;
+}
+
+.reveal ul ul {
+    list-style: circle;
+}
+.container {
+  position: relative;
+}
+
+.make-it-pop {
+  filter: drop-shadow(0 0 10px purple);
+}
+
+.bottomright {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
+
+
+#left {
+  margin: 0 0 5px 5px;
+  text-align: left;
+  float: left;
+  z-index: -10;
+  width: 48%;
+  font-size: 0.85em;
+}
+
+#right {
+  margin: 0 0 5px 0;
+  float: right;
+  max-width: 48%;
+  text-align: left;
+  z-index: -10;
+  width: 48%;
+  font-size: 0.85em;
+}
+
+#darkBack {
+    background-color: #1c1c1c;
+    color: #efefef;
+    /* .reveal a { */
+    /*     color: #F92672; */
+    /*     transition: color 0.15s ease; */
+    /* } */
+    /* .reveal a:hover { */
+    /*     color: var(--r-link-color-hover); */
+    /* } */
+}
+
+.multiCol {
+    display: table;
+    table-layout: fixed; /* don't fudge depending on content */
+    width: 100%;
+    text-align: left; /* matter of taste, makes imho sense */
+    /* .col { */
+    /*     display: table-cell; */
+    /*     vertical-align: top; */
+    /*     width: 50%; */
+    /*     padding: 2% 0 2% 3%; /* some vertical, and between columns */
+    /*     &:first-of-type { padding-left: 0; } /* there's nothing before col1 */
+    /* } */
+}
+
+.reveal blockquote:before {
+  content: "❝";
+  font-size: 2.5em;
+  margin-right: .05em;
+  line-height: 0.1em;
+  vertical-align: -0.3em;
+  text-align: left !important;
+  color: var(--text-faint);
+  font-style: normal !important;
+}
+
+.reveal blockquote p {
+  color: var(--text-muted);
+  font-style: normal !important;
+  text-align: left;
+  display: inline;
+  text-align: left;
+}
+
+.reveal blockquote em{
+  color: var(--text-muted);
+  text-align: left;
+}
+
+.reveal blockquote {
+  border-radius: 8px !important;
+  margin: 0.5rem 0rem 0.5rem 0rem;
+  text-align: center;
+  padding-top: 1rem;
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  width: auto;
+  max-width: 66%;
+  font-style: normal !important;
+}
+
+.reveal hljs {
+    background: #1c1c1c !important;
+}
+
+.hljs {
+    background: #202020 !important;
+    border-radius: 8px !important;
+}
+
+#blue {
+    color: #0091EA;
+}
+#bright {
+    color: #00A2FF;
+}
+#cyan {
+    color: #00CCFF;
+}
+#purple {
+    color: #AE81ff;
+}
+#green {
+    color: #00CF53;
+}
+#yellow {
+    color: #FFFF00;
+}
+#lightpink {
+    color: #E64980;
+}
+#pink {
+    color: #F92672;
+}
+#red {
+    color: #FA5252;
+}
+#grey {
+    color: #666666;
+}
+
+#noteinverse {
+    background-color: #1c1c1c;
+    border-radius: 5px;
+    border-color: #1c1c1c;
+    color: #efefef;
+    padding: 8px;
+    margin: 4px;
+}
+
+#note {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8;
+    border-color: rgba(240, 240, 240, 1.0);
+    color: rgb(255, 255, 255);
+    margin: auto;
+}
+
+#mark {
+    border-radius: 7;
+    margin: 4px;
+    padding: 8px;
+    background-color: #FFFF00;
+    color: #1c1c1c;
+    font-weight: 700;
+}
+
+.reveal .mark {
+    border-radius: 7;
+    margin: 4px;
+    padding: 8px;
+    background-color: #FFFF00;
+    color: #1c1c1c;
+    font-weight: 700;
+}
+
+#dark {
+    background-color: #1c1c1c;
+    color: #efefef;
+    --r-link-color: #228bE6;
+    --r-header-color: #666666;
+    -webkit-font-smoothing:subpixel-antialiased;
+}
+
+#halfsize {
+    font-size: 0.5em;
+}
+
+#large {
+  font-size: 1.25em;
+}
