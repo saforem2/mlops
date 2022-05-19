@@ -1,0 +1,4 @@
+# @package _global_
+batch_size: 32
+num_epochs: 10
+
