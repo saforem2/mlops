@@ -144,10 +144,15 @@ experiment = comet_ml.Experiment(
 
 ---
 
-#  Comet  `\(+\)` `TensorFlow`
-
-- <i class="fab fa-github"></i> [`mlops/src/comet/tensorflow/main.py`](https:/www.github.com/saforem2/src/mlops/comet/tensorflow/main.py)
-- [dashboard](https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step)
+# Comet `\(+\)`
+- <i class="fab fa-github"></i> [comet-ml/comet-examples](https://github.com/comet-ml/comet-examples)
+- <i class="fab fa-github"></i> [`saforem2/mlops`](https://github.com/saforem2/mlops)
+    - **PyTorch**:
+        - [`ddp.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
+        - ️️[`lightning.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
+    -  **TensorFlow**:
+        -  [`main.py`](https://github.com/saforem2/mlops/src/comet/tensorflow)
+            -  [dashboard](https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step)
 
 ---
 
@@ -159,23 +164,59 @@ note:
 - Background iframe
 
 ---
-
-# Comet `\(+\)` ⚡️`Pytorch Lightning`
-
----
-
-# Comet `\(+\)`
-- <i class="fab fa-github"></i>  [`mlops/src/comet/torch`](https://github.com/saforem2/mlops/src/comet/torch):
-    - **DDP**: [`ddp.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
-    - ️️ [**Pytorch Lightning**](https://pytorch-lightning.rtfd.io/en/latest/) ⚡: [`lightning.py`](https://github.com/saforem2/mlops/src/comet/torch/lightning.py)
-- <i class="fab fa-github"></i>  [`mlops/src/comet/tensorflow`](https://github.com/saforem2/mlops/src/comet/tensorflow):
-    -  [`main.py`](https://github.com/saforem2/mlops/src/comet/tensorflow)
-
----
 <!-- .slide bg="white" -->
 <grid drop="0 0" drag="100 100">
 <iframe width="100%" height="100%" data-src="https://www.comet.ml/saforem2/mlops/2cc1b07491554afcb42af1c7f040353e?experiment-tab=chart&showOutliers=true&smoothing=0&transformY=smoothing&xAxis=step" style="border:none;width:100%" data-preload data-background-interactive></iframe>
 </grid>
+
+---
+
+# ⚡️ Pytorch Lightning
+
+```python
+from pytorch_lightning import loggers as pl_loggers
+```
+- Tensorboard:
+  ```python
+  tensorboard = pl_loggers.TensorBoardLogger(save_dir='')
+  trainer = Trainer(logger=tensorboard)
+  def training_step(self):
+        tensorboard = self.logger.experiment
+        tensorboard.add_image()
+        tensorboard.add_histogram()
+        tensorboard.add_figure()
+  ```
+
+- [Comet.ml](https://comet.ml): 
+  ```python
+  comet_logger = pl_loggers.CometLogger("YOUR_API_KEY")
+  trainer = Trainer(logger=comet_logger)
+  class LitModel(LightningModule):
+        def any_lightning_module_function_or_hook(self):
+            comet = self.logger.experiment
+            fake_images = torch.Tensor(32, 3, 28, 28)
+            comet.add_image('generated_images', fake_images, 0)
+  ```
+
+- full documentation on [`CometLogger`](https://pytorch-lightning.readthedocs.io/en/latest/extensions/generated/pytorch_lightning.loggers.CometLogger.html#pytorch_lightning.loggers.CometLogger)
+
+ ---
+
+# ⚡️ Pytorch Lightning
+- MLflow:
+```python
+from pytorch_lightning.loggers import MLFlowLogger
+mlf_logger = MLFlowLogger(experiment_name='experiment', tracking_uri='file:./ml-runs')
+trainer = Trainer(logger=mlf_logger)
+
+class LitModel(LightningModule):
+    def any_lightning_module_function_or_hook(self):
+        mlf_logger = self.logger.experiment
+        fake_images = torch.Tensor(32, 3, 28, 28)
+        mlf_logger.add_aimge('generated_images', fake_images, 0)
+```
+    
+  
 
 ---
 <!-- .slide bg="white" -->
