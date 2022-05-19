@@ -115,29 +115,46 @@ class Trainer:
             self.test_loss.reset_states()
             self.train_acc.reset_states()
             self.test_acc.reset_states()
-            for images, labels in self.data['train']:
+            for images, labels in self.data['train']['data']:
                 self.train_step(images, labels)
 
-            for timages, tlabels in self.data['test']:
+            for timages, tlabels in self.data['test']['data']:
                 self.test_step(timages, tlabels)
 
-            metrics = {
-                'train': {
-                    'loss': self.train_loss.result(),
-                    'acc': self.train_acc.result(),
-                },
-                'test': {
-                    'loss': self.test_loss.result(),
-                    'acc': self.test_acc.result(),
+            if epoch % self.cfg.logfreq == 0:
+                metrics = {
+                    'train': {
+                        'loss': self.train_loss.result(),
+                        'acc': self.train_acc.result(),
+                    },
+                    'test': {
+                        'loss': self.test_loss.result(),
+                        'acc': self.test_acc.result(),
+                    }
                 }
-            }
-            log.info(' '.join([
-                f'EPOCH: {epoch}',
-                *[f'{k}: {v}' for k, v in metrics.items()],
-            ]))
-            with self.writer.as_default():
-                for key, val in metrics.items():
-                    tf.summary.scalar(key, val, step=epoch)
+                train_str = ['TRAIN:'] + [
+                    f'{k}: {v.numpy():.4f}'
+                    for k, v in metrics['train'].items()
+                ]
+                test_str = ['TEST:'] + [
+                    f'{k}: {v.numpy():.4f}'
+                    for k, v in metrics['train'].items()
+                ]
+                log.info(' '.join([
+                    f'EPOCH: {epoch}',
+                    *train_str,
+                    *test_str,
+                ]))
+
+                with self.writer.as_default():
+                    for type, data in metrics.items():
+                        for key, val in data.items():
+                            name = f'{type}/{key}'
+                            tf.summary.scalar(
+                                f'{type}/{key}',
+                                val,
+                                step=epoch
+                            )
 
 
 
@@ -145,23 +162,24 @@ class Trainer:
 @hydra.main(config_path='./conf', config_name='config')
 def main(cfg: DictConfig) -> None:
     trainer = Trainer(cfg)
-    trainer.net.fit(
-        trainer.data['train']['x'],
-        trainer.data['train']['y'],
-        batch_size=cfg.batch_size,
-        epochs=cfg.num_epochs,
-        validation_data=(
-            trainer.data['test']['x'],
-            trainer.data['test']['y']
-        ),
-    )
+    trainer.train()
+    # trainer.net.fit(
+    #     trainer.data['train']['x'],
+    #     trainer.data['train']['y'],
+    #     batch_size=cfg.batch_size,
+    #     epochs=cfg.num_epochs,
+    #     validation_data=(
+    #         trainer.data['test']['x'],
+    #         trainer.data['test']['y']
+    #     ),
+    # )
 
-    score = trainer.net.evaluate(
-        trainer.data['test']['x'],
-        trainer.data['test']['y']
-    )
+    # score = trainer.net.evaluate(
+    #     trainer.data['test']['x'],
+    #     trainer.data['test']['y']
+    # )
 
-    log.info(f'Score: {score}')
+    # log.info(f'Score: {score}')
 
 
 

@@ -1,4 +1,14 @@
 # @package _global_
+
+work_dir: ${hydra:runtime.cwd}
+data_dir: ${work_dir}/data/
 batch_size: 32
 num_epochs: 10
+logfreq: 10
+
+defaults:
+  - _self_
+  - experiment: null
+  - override hydra/hydra_logging: colorlog
+  - override hydra/job_logging: colorlog
 
