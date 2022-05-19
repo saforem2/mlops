@@ -1,0 +1,9 @@
+# @project _global_
+
+workspace: null
+rest_api_key: null
+project_name: MLOps
+experiment_key: null
+experiment_name: null
+api_key: r7rKFO35BJuaY3KT1Tpj4adco
+auto_histogram_gradient_logging: true

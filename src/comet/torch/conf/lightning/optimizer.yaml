@@ -1,0 +1,10 @@
+algorithm: bayes
+spec:
+  maxCombo: 5
+parameters:
+  learning_rate:
+    min: 0.01
+    max: 0.99
+    type: double
+    gridSize: 10
+
